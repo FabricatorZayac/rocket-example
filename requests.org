@@ -1,0 +1,46 @@
+#+title: Requests
+#+startup: overview
+
+* Hello world stuff
+** /hello
+#+begin_src restclient
+GET http://localhost:8000/hello
+#+end_src
+
+** /delay/<seconds>
+#+begin_src restclient
+GET http://localhost:8000/hello/delay/4
+#+end_src
+
+** /hello/<name>
+#+begin_src restclient
+GET http://localhost:8000/hello/Jimmy
+#+end_src
+
+* GET
+** /user/<id>
+#+begin_src restclient
+GET http://localhost:8000/api/v1/user/1
+#+end_src
+
+* POST
+** /user
+#+begin_src restclient
+POST http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+    "name": "Anny",
+    "color": {
+        "r": 5,
+        "g": 0,
+        "b": 0
+    }
+}
+#+end_src
+
+* DELETE
+** /user/<id>
+#+begin_src restclient
+DELETE http://localhost:8000/api/v1/user/1
+#+end_src
